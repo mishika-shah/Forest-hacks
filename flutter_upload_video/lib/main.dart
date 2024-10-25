@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:forest_hacks/flutter_upload_video/demo_app.dart';
+import 'package:flutter_upload_video/demo_app.dart';
+
 
 void main() {
   runApp(const MyApp());
