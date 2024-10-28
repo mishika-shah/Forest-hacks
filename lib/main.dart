@@ -4,11 +4,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:permission_handler/permission_handler.dart';
+//import 'package:storing/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(); // Initialize Firebase
-  runApp(VideoUploaderApp());
+  //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform); Initialize Firebase
 }
 
 class VideoUploaderApp extends StatelessWidget {
@@ -16,6 +17,7 @@ class VideoUploaderApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Video Uploader',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
       home: VideoUploader(),
     );
