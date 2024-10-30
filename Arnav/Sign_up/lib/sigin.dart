@@ -61,6 +61,7 @@ class _AuthPageState extends State<AuthPage> {
 
   void signUp() {
     showMessage('Sign Up Successful');
+    
     clearFields();
   }
 

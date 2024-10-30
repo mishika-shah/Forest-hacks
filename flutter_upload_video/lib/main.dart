@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_upload_video/demo_app.dart';
+//import 'package:flutter_upload_video/demo_app.dart';
 import 'package:flutter_upload_video/firebase_options.dart';
+import 'package:flutter_upload_video/sigin.dart';
 
 
 void main() async{
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
 Widget build(BuildContext context){
   return MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: DemoApp(),
+    home: AuthPage(),
   );
 }
 }

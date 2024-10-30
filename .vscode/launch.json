@@ -1,0 +1,85 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Forest-hacks",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "Forest-hacks (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "Forest-hacks (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "displayvideo",
+      "cwd": "displayvideo",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "displayvideo (profile mode)",
+      "cwd": "displayvideo",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "displayvideo (release mode)",
+      "cwd": "displayvideo",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "flutter_upload_video",
+      "cwd": "flutter_upload_video",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "flutter_upload_video (profile mode)",
+      "cwd": "flutter_upload_video",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "flutter_upload_video (release mode)",
+      "cwd": "flutter_upload_video",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "Sign_up",
+      "cwd": "Arnav\\Sign_up",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "Sign_up (profile mode)",
+      "cwd": "Arnav\\Sign_up",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "Sign_up (release mode)",
+      "cwd": "Arnav\\Sign_up",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}

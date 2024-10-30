@@ -1,5 +1,6 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_upload_video/demo_app.dart';
 import 'package:flutter_upload_video/videoplayerwidget.dart';
 
 class VideoListScreen extends StatefulWidget {
@@ -46,13 +47,25 @@ class _VideoListScreenState extends State<VideoListScreen> {
         ),
         backgroundColor: Color.fromARGB(255, 0, 191, 255),
         elevation: 10,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.upload_file),
+            onPressed: () {
+              // Navigate to the Upload Video Screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DemoApp()),
+              );
+            },
+          ),
+        ],
       ),
-      backgroundColor: Colors.black, // Set the background color to black
+      //backgroundColor: Colors.black, // Set the background color to black
       body: videoUrls.isNotEmpty
           ? ListView.builder(
               itemCount: videoUrls.length,
               itemBuilder: (context, index) {
-                String videoUrl = videoUrls[index];
+                String videoUrl = videoUrls[index]; 
                 String decodedUrl = Uri.decodeFull(videoUrl);
                 String videoNameWithParams = decodedUrl.split('/').last;
                 String videoName = videoNameWithParams.split('?').first;
