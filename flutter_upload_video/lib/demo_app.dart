@@ -1,7 +1,8 @@
 import 'dart:io';
-
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter_upload_video/videolistscreen.dart';
 
 class DemoApp extends StatefulWidget {
   DemoApp({Key? key}) : super(key: key);
@@ -32,8 +33,11 @@ class _DemoAppState extends State<DemoApp> {
         _fileName = result!.files.first.name;
         pickedfile = result!.files.first;
         filetoDisplay = File(pickedfile!.path.toString());
-
         print('File name $_fileName');
+        final storageRef = FirebaseStorage.instance.ref('videos/$_fileName');
+        await storageRef.putFile(filetoDisplay!);
+        Navigator.push(context,
+        MaterialPageRoute(builder: (context) => VideoListScreen()));
       }
       setState(() {
         isLoading = false;
@@ -69,9 +73,14 @@ class _DemoAppState extends State<DemoApp> {
         children: [
           Center(
             child: isLoading
-                ? const CircularProgressIndicator()
+                ? Column(
+                  children: [
+                    CircularProgressIndicator(),
+                    Text('Uploading...'),
+                  ],
+                )
                 : SizedBox(
-                    width: 126, // Set the desired width here
+                    width: 130, // Set the desired width here
                     child: ElevatedButton(
                       onPressed: () {
                         pickfile();

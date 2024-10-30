@@ -4,12 +4,13 @@ import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:storing/firebase_options.dart';
 //import 'package:storing/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Initialize Firebase
-  //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform); Initialize Firebase
+  //await Firebase.initializeApp(); // Initialize Firebase
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform); //Initialize Firebase
 }
 
 class VideoUploaderApp extends StatelessWidget {
