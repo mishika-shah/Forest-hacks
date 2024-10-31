@@ -4,8 +4,9 @@ import 'package:flutter_upload_video/demo_app.dart';
 import 'package:flutter_upload_video/videoplayerwidget.dart';
 
 class VideoListScreen extends StatefulWidget {
-  const VideoListScreen({super.key});
-
+  //const VideoListScreen({super.key});
+  final String role;
+  const VideoListScreen({super.key, required this.role});
   @override
   State<VideoListScreen> createState() => _VideoListScreenState();
 }
@@ -47,18 +48,25 @@ class _VideoListScreenState extends State<VideoListScreen> {
         ),
         backgroundColor: Color.fromARGB(255, 0, 191, 255),
         elevation: 10,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.upload_file),
-            onPressed: () {
+         actions: [
+        IconButton(
+          icon: Icon(Icons.upload_file),
+          onPressed: () {
+            if (widget.role == 'Teacher') {
               // Navigate to the Upload Video Screen
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => DemoApp()),
               );
-            },
-          ),
-        ],
+            } else {
+              // Show message for students
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Students cannot upload files.')),
+              );
+            }
+          },
+        ),
+      ],
       ),
       //backgroundColor: Colors.black, // Set the background color to black
       body: videoUrls.isNotEmpty

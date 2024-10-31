@@ -37,7 +37,7 @@ class _DemoAppState extends State<DemoApp> {
         final storageRef = FirebaseStorage.instance.ref('videos/$_fileName');
         await storageRef.putFile(filetoDisplay!);
         Navigator.push(context,
-        MaterialPageRoute(builder: (context) => VideoListScreen()));
+        MaterialPageRoute(builder: (context) => VideoListScreen(role:'Teacher',)));
       }
       setState(() {
         isLoading = false;

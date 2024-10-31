@@ -65,7 +65,7 @@ class _AuthPageState extends State<AuthPage> {
     //showMessage('Sign Up Successful');
     if(_role == 'Student')
     {
-      Navigator.push(context,MaterialPageRoute(builder: (context) => VideoListScreen()));
+      Navigator.push(context,MaterialPageRoute(builder: (context) => VideoListScreen(role: _role,)));
     }
     else if (_role == 'Teacher')
     {
@@ -76,7 +76,7 @@ class _AuthPageState extends State<AuthPage> {
   }
 
   void signIn() {
-    Navigator.push(context,MaterialPageRoute(builder: (context) => VideoListScreen()));
+    Navigator.push(context,MaterialPageRoute(builder: (context) => VideoListScreen(role: 'Student',)));
     clearFields();
   }
 
